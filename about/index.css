@@ -7,7 +7,7 @@ ul {
     left: 0;
     overflow: hidden;
     position: fixed;
-    background-color: #333;
+    background-color: #181d20
   }
   
   li {
@@ -24,9 +24,12 @@ ul {
   }
   
   li a:hover:not(.active) {
-    background-color: #111;
+    background-color: rgb(14, 109, 153);
   }
   
   .active {
     background-color: #04AA6D;
+  }
+  body{
+    background-color: #dcffff;
   }
