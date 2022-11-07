@@ -4,3 +4,6 @@ body{
   color: var(--ctp-mocha-text);
   background-color: var(--ctp-mocha-base);
 }
+.icon{
+  color: var(--ctp-mocha-text);
+}
