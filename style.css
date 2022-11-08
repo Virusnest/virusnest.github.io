@@ -83,7 +83,7 @@ figure img {
 }
 .profile-card {
   width: 60vmin;
-  background-color: rgba(17, 17, 27, 0.2);
+  background-color: rgba(17, 17, 27, 0.5);
   height: 90vmin;
   border-radius: 6vmin;
   margin: 0px;
