@@ -1,23 +1,39 @@
 @import url('https://unpkg.com/@catppuccin/palette@0.1.4/css/catppuccin.css');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 body{
   color: var(--ctp-mocha-text);
   background-color: var(--ctp-mocha-base);
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
 }
 ul li
 {
-    list-style-type: none;
-    display: inline;
-    padding: 10px;
+  display: inline;
+  padding: 2%;
+  text-align: center;
 }
+a {
+  text-decoration: none;
+} 
 .socials-list{
-  margin: auto;
+  text-align: center;
+  margin-top: 50%;
+  padding:0;
 }
-.socials{
-  margin: auto;
-  width: auto;
+figure{
+  padding: 0 auto;
+  display: flex;
+  justify-content: center;
 }
-
+figure img{
+  border-radius: 50%;
+  height: 50%;
+  width: 50%;
+}
+.profile-info{
+  text-align: center;
+}
 .profile-card{
   background-color: var(--ctp-mocha-surface0);
   width: 600px;
