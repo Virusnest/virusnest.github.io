@@ -1,46 +1,80 @@
 @import url('https://unpkg.com/@catppuccin/palette@0.1.4/css/catppuccin.css');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-body{
+body {
   color: var(--ctp-mocha-text);
   background-color: var(--ctp-mocha-base);
   font-family: 'Nunito', sans-serif;
-  font-size: 20px;
+  font-size: 150%;
 }
-ul li
-{
+.socials ul li {
   display: inline;
-  padding: 2%;
+  padding: 0 2.5vw;
   text-align: center;
 }
-p{line-height: 5px;}
+p {
+  line-height: 5px;
+}
 a {
   text-decoration: none;
 } 
+.socials{
+  text-align: center;
+  padding:0;
+  position:fixed;
+  bottom:0%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, 0);
+}
 .socials-list{
   text-align: center;
-  margin-top: 65%;
   padding:0;
 }
 figure{
-  padding: 0 auto;
+  position: relative;
   display: flex;
   justify-content: center;
 }
-figure img{
+figure img {
+  position:relative;
   border-radius: 50%;
   height: 50%;
   width: 50%;
 }
-.profile-info{
+.profile-stats h3{
+  padding:0;
+  margin: 0;
+}
+.profile-info {
+  position:relative;
   text-align: center;
 }
-.profile-card{
+.profile-stats{
+  text-align: center;
+  padding:0;
+  position:fixed;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.profile-stats ul{
+  height: 10%;
+  padding: 0;
+  align-items:flex-start;
+  display: flex;
+  justify-content: center;
+}
+.profile-stats ul li{
+  padding: 0 3vw;
+  display: inline;
+}
+.profile-card {
   background-color: var(--ctp-mocha-surface0);
-  width: 600px;
-  height: 900px;
-  border-radius: 80px;
-  margin: 0;
+  width: 60vmin;
+  height: 90vmin;
+  border-radius: 6vmin;
+  margin: 0px;
   position: absolute;
   top: 50%;
   left: 50%;
