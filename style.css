@@ -13,12 +13,13 @@ ul li
   padding: 2%;
   text-align: center;
 }
+p{line-height: 5px;}
 a {
   text-decoration: none;
 } 
 .socials-list{
   text-align: center;
-  margin-top: 50%;
+  margin-top: 65%;
   padding:0;
 }
 figure{
@@ -37,7 +38,7 @@ figure img{
 .profile-card{
   background-color: var(--ctp-mocha-surface0);
   width: 600px;
-  height: 800px;
+  height: 900px;
   border-radius: 80px;
   margin: 0;
   position: absolute;
