@@ -7,7 +7,9 @@ body {
   font-size: 3vmin;
   background-image: url("background.png");
   background-repeat: no-repeat;
-  background-size: 160vmax;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
 }
 .root{
   width: 100%;
