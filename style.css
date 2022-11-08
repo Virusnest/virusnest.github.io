@@ -92,5 +92,5 @@ figure img {
   left: 50%;
   transform: translate(-50%, -50%);
   backdrop-filter: blur(1vmin);
-  box-shadow: 0 15px 25px rgba(10, 6, 30, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
