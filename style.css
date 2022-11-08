@@ -4,6 +4,28 @@ body{
   color: var(--ctp-mocha-text);
   background-color: var(--ctp-mocha-base);
 }
-.icon{
-  color: var(--ctp-mocha-text);
+ul li
+{
+    list-style-type: none;
+    display: inline;
+    padding: 10px;
+}
+.socials-list{
+  margin: auto;
+}
+.socials{
+  margin: auto;
+  width: auto;
+}
+
+.profile-card{
+  background-color: var(--ctp-mocha-surface0);
+  width: 600px;
+  height: 800px;
+  border-radius: 80px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
