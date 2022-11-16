@@ -94,3 +94,16 @@ figure img {
   backdrop-filter: blur(1vmin);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
+
+.github{
+  stroke: var(--ctp-mocha-text)
+}
+.youtube{
+  stroke: var(--ctp-mocha-red)
+}
+.reddit{
+  stroke: var(--ctp-mocha-maroon)
+}
+.steam{
+  stroke: var(--ctp-mocha-lavender)
+}
