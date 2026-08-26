@@ -1,5 +1,22 @@
 {
+  "name": "virusnest.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website/Profile Card",
+  "main": "index.js",
   "scripts": {
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/virusnest.github.io/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virusnest/virusnest.github.io.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/virusnest/virusnest.github.io/issues"
+  },
+  "homepage": "https://github.com/virusnest/virusnest.github.io#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6"
   }
 }
