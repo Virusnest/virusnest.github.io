@@ -4,7 +4,7 @@
   "description": "Personal Website/Profile Card",
   "main": "index.js",
   "scripts": {
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/virusnest.github.io/",
+    "build-ghpages": "npx @11ty/eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
