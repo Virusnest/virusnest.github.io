@@ -1,3 +1,5 @@
-"scripts": {
-  "build-ghpages": "npx @11ty/eleventy --pathprefix=/YOUR_REPO_NAME/",
+{
+  "scripts": {
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/virusnest.github.io/",
+  }
 }
