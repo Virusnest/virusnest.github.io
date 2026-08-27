@@ -1,11 +1,11 @@
-@import url('https://unpkg.com/@catppuccin/palette@0.1.4/css/catppuccin.css');
+@import url('colorschemes/darkgreen.css');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 body {
-    color: var(--ctp-mocha-text);
+    color: var(--color-text-1);
     font-family: 'Nunito', sans-serif;
     font-size: 3vmin;
-    background-image: url("/assets/background.png");
+    background-color: var(--color-bg-1);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
