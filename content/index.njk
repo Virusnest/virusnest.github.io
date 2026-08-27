@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    {% include "header.html" %}
+    <main>
+        <h1>My Website</h1>
+        <p>Body</p>
+        <h2>Articles</h2>
+        <ul class="frame">
+          {% for post in collections.post | reverse %}
+            <li>
+              <a href="{{ post.url }}">{{ post.data.title }}</a> —
+              <time datetime="{{ post.date }}">{{ post.date.toDateString() }}</time>
+            </li>
+          {% endfor %}
+        </ul>
+        <button class="btn invert-hover">Awesome Button</button>
+        <a href="/blog/">View all posts &rarr;</a>
+    </main>
+    {% include "footer.html" %}
+
+</body>
+
+</html>

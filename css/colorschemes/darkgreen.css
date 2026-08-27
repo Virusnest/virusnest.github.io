@@ -1,14 +1,14 @@
 :root {
     /* Existing Text & Backgrounds */
-    --color-text-1: #111827;
-    --color-text-2: #374151;
-    --color-text-3: #6b7280;
-    --color-text-4: #9ca3af;
+    --color-text-1: #f2edd8;
+    --color-text-2: #f2edd8;
+    --color-text-3: #f2edd8;
+    --color-text-4: #f2edd8;
 
-    --color-bg-1: #ffffff;
-    --color-bg-2: #f9fafb;
-    --color-bg-3: #f3f4f6;
-    --color-bg-4: #e5e7eb;
+    --color-bg-1: #070908;
+    --color-bg-2: #070908;
+    --color-bg-3: #070908;
+    --color-bg-4: #070908;
 
     /* Accent Suite */
     --color-accent: #6366f1;
@@ -16,12 +16,11 @@
     --color-accent-text: #ffffff;
 
     /* Borders */
-    --color-border-subtle: #e5e7eb;
-    --color-border-bold: #d1d5db;
+    --color-border-subtle: #cdc4ba80;
+    --color-border-bold: #cdc4ba;
 
     /* System States */
     --color-danger: #ef4444;
     --color-success: #10b981;
     --color-warning: #f59e0b;
 }
-

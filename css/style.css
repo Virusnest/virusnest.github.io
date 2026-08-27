@@ -1,127 +1,114 @@
-@import url('colorschemes/darkgreen.css');
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url("colorschemes/darkgreen.css");
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+    --font-title: "Fraunces", serif;
+    --font-sans: "Space Grotesk", sans-serif;
+}
 
 body {
-    color: var(--color-text-1);
-    font-family: 'Nunito', sans-serif;
-    font-size: 3vmin;
     background-color: var(--color-bg-1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
+    color: var(--color-text-1);
+    font-family: var(--font-sans);
+    font-style: normal;
 }
 
-.root {
-    width: 100%;
+main {
+    margin: 1em;
+}
+
+header {
+    margin: 1em;
+}
+
+html,
+body {
     height: 100%;
-}
-
-.socials ul li {
-    display: inline;
-    padding: 0 2%;
-    text-align: center;
-}
-
-svg {
-    font-size: 3vmin;
-    width: 7vmin;
-    height: 7vmin;
-}
-
-p {
-    line-height: 1vmin;
-}
-
-a {
-    text-decoration: none;
-}
-
-.socials {
-    text-align: center;
-    padding: 0;
-    position: fixed;
-    bottom: 0%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, 0);
-}
-
-.socials-list {
-    padding: 0;
-}
-
-figure {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-figure img {
-    position: relative;
-    border-radius: 50%;
-    height: 25vmin;
-    width: 25vmin;
-}
-
-.profile-stats h3 {
-    padding: 0;
     margin: 0;
 }
 
-.profile-info {
-    position: relative;
-    text-align: center;
-}
-
-.profile-stats {
-    text-align: center;
-    padding: 0;
-    position: fixed;
-    top: 62%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.profile-stats ul {
-    height: 10%;
-    padding: 0;
-    align-items: flex-start;
-    display: flex;
-    justify-content: center;
-}
-
-.profile-stats ul li {
-    padding: 0 3%;
-    display: inline;
-}
-
-.profile-card {
-    width: 60vmin;
-    background-color: rgba(17, 17, 27, 0.5);
-    height: 90vmin;
-    border-radius: 6vmin;
-    margin: 0px;
+footer {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    backdrop-filter: blur(1vmin);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    /* Fixed height required */
 }
 
-.github {
-    stroke: var(--ctp-mocha-text)
+body::before {
+    background-image: url("/assets/grain.png");
+    background-repeat: repeat;
+    background-size: 10%;
+    opacity: 0.05;
+    content: "";
+    z-index: 9999;
+    inset: 0;
+    pointer-events: none;
+    position: fixed;
 }
 
-.youtube {
-    stroke: var(--ctp-mocha-red)
+h1,
+h2,
+h3 {
+    font-family: var(--font-title);
 }
 
-.reddit {
-    stroke: var(--ctp-mocha-maroon)
+.frame {
+    border: 1px solid var(--color-border-subtle);
+    padding: 1em;
+    margin: 1em;
 }
 
-.steam {
-    stroke: var(--ctp-mocha-lavender)
+
+
+
+.invert-hover:hover {
+    border: 1px solid;
+    background-color: var(--color-text-1);
+    color: var(--color-bg-1);
+    border-color: var(--color-border-subtle);
+}
+
+
+.btn {
+    border: 1px solid;
+    background-color: transparent;
+    font-family: var(--font-sans);
+    font-weight: lighter;
+    color: var(--color-text-1);
+    border-color: var(--color-border-subtle);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.defult-hover:hover,
+.btn:hover {
+    border-color: var(--color-border-bold);
+}
+
+.link {
+    text-decoration: none;
+    position: relative;
+    color: inherit;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
 }

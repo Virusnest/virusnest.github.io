@@ -4,10 +4,11 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: ".",
+      input: "content",
       output: "_site",
-      includes: "_includes",
-      data: "_data"
-    }
+      includes: "../_includes",
+      data: "../_data",
+    },
+    htmlTemplateEngine: "njk",
   };
 };
