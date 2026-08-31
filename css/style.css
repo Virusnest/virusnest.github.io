@@ -1,5 +1,6 @@
 @import url("colorschemes/darkgreen.css");
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url("helpers.css");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 
 :root {
     --font-title: "Fraunces", serif;
@@ -11,6 +12,39 @@ body {
     color: var(--color-text-1);
     font-family: var(--font-sans);
     font-style: normal;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bg-overlay {
+    position: absolute;
+    z-index: 1; /* Sits behind text */
+    mix-blend-mode: screen;
+    display: block; /* 2. Eliminates bottom baseline spacing */
+    overflow: hidden; /* 3. Keeps overlay strictly inside bounds */
+    color: red;
+    mask: initial;
+    pointer-events: none;
+    line-height: 0;
+    top: 0;
+    left: 0;
+}
+.bg-overlay::after {
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--color-bg-3); /* Your tint color (e.g., hot pink) */
+    mix-blend-mode: multiply; /* Multiplies color into the white areas */
+    pointer-events: none;
+    content: "";
+}
+
+.vert {
+    writing-mode: vertical-rl;
 }
 
 main {
@@ -54,22 +88,23 @@ h3 {
     font-family: var(--font-title);
 }
 
+.title-font {
+    font-family: var(--font-title);
+    font-weight: bold;
+    font-size: large;
+}
+
 .frame {
-    border: 1px solid var(--color-border-subtle);
     padding: 1em;
     margin: 1em;
 }
 
-
-
-
 .invert-hover:hover {
-    border: 1px solid;
+    border: 0.01rem solid;
     background-color: var(--color-text-1);
     color: var(--color-bg-1);
     border-color: var(--color-border-subtle);
 }
-
 
 .btn {
     border: 1px solid;
@@ -97,10 +132,10 @@ h3 {
 }
 
 .link::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 0.1rem;
     bottom: 0;
     left: 0;
     background-color: currentColor;

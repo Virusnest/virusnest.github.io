@@ -5,10 +5,18 @@
   <link rel="stylesheet" href="/css/style.css">
   <title>{{ title }}</title>
 </head>
-<body>
+<body >
   {% include "header.html" %}
-  <main>
+  <main class="">
+      <div class="inline align-top">
+      {% include "sidebar.html" %}
+      </div>
+      <div class="inline border">
       {{ content | safe }}
+      </div>
+      <div class="bg-overlay">
+          <img src="/assets/forgetmenot.png"></img>
+      </div>
   </main>
   {% include "footer.html" %}
 </body>
