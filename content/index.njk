@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
 
-<head>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <body>
+        {% include "header.html" %}
 
-<body>
-    {% include "header.html" %}
-    <div class="inline align-top">
-    {% include "sidebar.html" %}
-    </div>
-    <main class="inline top">
-        <h1>My Website</h1>
-        <p>Body</p>
+        <main class="top p-5">
+            <h1 class="t-center">My Website</h1>
 
-        <div id=articles>
-            <h1>Articles</h1>
-            <ul class="frame">
-            {% for post in collections.post | reverse %}
-                <li>
-                <a href="{{ post.url }}" class="link">{{ post.data.title }}</a> —
-                <time datetime="{{ post.date }}">{{ post.date.toDateString() }}</time>
-                </li>
-            {% endfor %}
-            </ul>
+            <!-- Centering container wrapper -->
+            <div class="flex j-center">
+                <!-- Grid container -->
+                <div id="body" class="row col-12 g-0">
+                    <div id="articles" class="col-span-3 border frame flex">
+                        <p class="vert border-l align-top t-right flip m-0">
+                            Articles
+                        </p>
+                        <div class="mx-1">
+                            <ul class="frame inline clean">
+                                {% for post in collections.post | reverse %}
+                                <li>
+                                    <a href="{{ post.url }}" class="link"
+                                        >{{ post.data.title }}</a
+                                    >
+                                    -
+                                    <time datetime="{{ post.date }}"
+                                        >{{ post.date.toDateString() }}</time
+                                    >
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <a href="/blog/" class="inline"
+                                >View all posts &rarr;</a
+                            >
+                        </div>
+                    </div>
+
+                    <div id="about" class="col-span-6 border frame">
+                        {% renderFile "content/about.md" %}
+                    </div>
+
+                    <div id="webrings" class="col-span-3 border frame"></div>
+                </div>
+            </div>
+        </main>
+
+        {% include "footer.html" %}
+        <div class="bg-overlay">
+            <img src="/assets/forgetmenot.png" />
         </div>
-        <div></div>
-        <button class="btn invert-hover">Awesome Button</button>
-        <a href="/blog/">View all posts &rarr;</a>
-    </main>
-
-    {% include "footer.html" %}
-    <div class="bg-overlay">
-        <img src="/assets/forgetmenot.png">
-        
-    </div>
-</body>
-
+    </body>
 </html>

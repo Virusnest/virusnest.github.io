@@ -1,4 +1,7 @@
 /* Gaps */
+.g-0 {
+    gap: 0px;
+}
 .g-1 {
     gap: 1rem;
 }
@@ -60,6 +63,11 @@
 }
 
 /* Margins */
+
+.m-0 {
+    margin: 0;
+}
+
 .m-1 {
     margin: 1rem;
 }
@@ -131,6 +139,11 @@
 }
 
 /* Padding */
+
+.p-0 {
+    padding: 0;
+}
+
 .p-1 {
     padding: 1rem;
 }
@@ -234,31 +247,31 @@
 }
 
 /* Flex Alignment & Distribution */
-.items-center {
+.i-center {
     align-items: center;
 }
 
-.items-start {
+.i-start {
     align-items: flex-start;
 }
 
-.items-end {
+.i-end {
     align-items: flex-end;
 }
 
-.justify-center {
+.j-center {
     justify-content: center;
 }
 
-.justify-between {
+.j-between {
     justify-content: space-between;
 }
 
-.justify-start {
+.j-start {
     justify-content: flex-start;
 }
 
-.justify-end {
+.j-end {
     justify-content: flex-end;
 }
 
@@ -275,15 +288,15 @@
 }
 
 /* Text Alignment & Wrapping */
-.text-left {
+.t-left {
     text-align: left;
 }
 
-.text-center {
+.t-center {
     text-align: center;
 }
 
-.text-right {
+.t-right {
     text-align: right;
 }
 
@@ -310,6 +323,78 @@
     position: absolute;
 }
 
+ul.clean,
+ol.clean {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Clean Button - Removes default borders, background, padding, and outline */
+button.clean {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* Clean Input & Textarea - Removes borders, outlines, backgrounds, and webkit appearance */
+input.clean,
+textarea.clean {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Clean Link (a) - Removes underlines and inherits parent text color */
+a.clean {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Clean Headings & Paragraphs (h1-h6, p) - Resets margins and inherits font properties */
+p.clean,
+h1.clean,
+h2.clean,
+h3.clean,
+h4.clean,
+h5.clean,
+h6.clean {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+/* Clean Fieldset - Removes box border and default padding */
+fieldset.clean {
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+/* Clean Table - Removes cell spacing and default table borders */
+table.clean {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
 /* Quick Accessibility & Reset */
 .sr-only {
     position: absolute;
@@ -331,48 +416,85 @@
 .row {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    --gutter-x: 1.5rem;
-    --gutter-y: 0;
-    gap: var(--gutter-y) var(--gutter-x);
 }
 
-/* Column Spanning (Default / Mobile) */
-.col {
-    grid-column: span 12;
-}
 .col-1 {
-    grid-column: span 1;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .col-2 {
-    grid-column: span 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .col-3 {
-    grid-column: span 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .col-4 {
-    grid-column: span 4;
-}
-.col-5 {
-    grid-column: span 5;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .col-6 {
-    grid-column: span 6;
-}
-.col-7 {
-    grid-column: span 7;
-}
-.col-8 {
-    grid-column: span 8;
-}
-.col-9 {
-    grid-column: span 9;
-}
-.col-10 {
-    grid-column: span 10;
-}
-.col-11 {
-    grid-column: span 11;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 .col-12 {
-    grid-column: span 12;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
 }
+
+.grid-auto-sm {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.grid-auto-md {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.grid-auto-lg {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.col-span-full {
+    grid-column: 1 / -1;
+}
+.col-span-1 {
+    grid-column: span 1 / span 1;
+}
+.col-span-2 {
+    grid-column: span 2 / span 2;
+}
+.col-span-3 {
+    grid-column: span 3 / span 3;
+}
+.col-span-4 {
+    grid-column: span 4 / span 4;
+}
+.col-span-6 {
+    grid-column: span 6 / span 6;
+}
+
+.items-stretch {
+    align-items: stretch;
+}
+
+.place-center {
+    place-items: center;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: 160px; /* Adjust base cell height as needed */
+    gap: 1.25rem;
+}
+
+/* Common Preset Shapes for Fast Prototyping */
+.bento-hero {
+    grid-column: span 8 / span 8;
+    grid-row: span 2 / span 2;
+} /* Large Featured Block */
+.bento-tall {
+    grid-column: span 4 / span 4;
+    grid-row: span 2 / span 2;
+} /* Vertical Sidebar Card */
+.bento-wide {
+    grid-column: span 8 / span 8;
+    grid-row: span 1 / span 1;
+} /* Horizontal Banner */
+.bento-small {
+    grid-column: span 4 / span 4;
+    grid-row: span 1 / span 1;
+} /* Square/Standard Card */
