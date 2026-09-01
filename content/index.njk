@@ -13,22 +13,27 @@
     <main class="inline top">
         <h1>My Website</h1>
         <p>Body</p>
-        <h2>Articles</h2>
-        <ul class="frame">
-          {% for post in collections.post | reverse %}
-            <li>
-              <a href="{{ post.url }}" class="link">{{ post.data.title }}</a> —
-              <time datetime="{{ post.date }}">{{ post.date.toDateString() }}</time>
-            </li>
-          {% endfor %}
-        </ul>
+
+        <div id=articles>
+            <h1>Articles</h1>
+            <ul class="frame">
+            {% for post in collections.post | reverse %}
+                <li>
+                <a href="{{ post.url }}" class="link">{{ post.data.title }}</a> —
+                <time datetime="{{ post.date }}">{{ post.date.toDateString() }}</time>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div></div>
         <button class="btn invert-hover">Awesome Button</button>
         <a href="/blog/">View all posts &rarr;</a>
     </main>
 
     {% include "footer.html" %}
     <div class="bg-overlay">
-        <img src="/assets/forgetmenot.png"></img>
+        <img src="/assets/forgetmenot.png">
+        
     </div>
 </body>
 

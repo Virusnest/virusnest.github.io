@@ -1,10 +1,10 @@
 @import url("colorschemes/darkgreen.css");
 @import url("helpers.css");
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Grotesk:wght@300..700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 :root {
     --font-title: "Fraunces", serif;
     --font-sans: "Space Grotesk", sans-serif;
+    --font-mono: "Space Mono", serif;
 }
 
 body {
@@ -12,6 +12,32 @@ body {
     color: var(--color-text-1);
     font-family: var(--font-sans);
     font-style: normal;
+}
+
+.border {
+    border: 1px solid var(--color-border-subtle);
+}
+.border-l {
+    border-left: 1px solid var(--color-border-subtle);
+}
+.border-r {
+    border-right: 1px solid var(--color-border-subtle);
+}
+
+.border-t {
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+.border-b {
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+code {
+    font-family: var(--font-mono);
+}
+
+.f-spaced {
+    letter-spacing: 0.14em;
 }
 
 .sidebar ul {
@@ -44,7 +70,11 @@ body {
 }
 
 .vert {
-    writing-mode: vertical-rl;
+    writing-mode: vertical-lr;
+}
+
+.flip {
+    transform: rotate(180deg);
 }
 
 main {
@@ -107,6 +137,8 @@ h3 {
 }
 
 .btn {
+    border-radius: 2px;
+
     border: 1px solid;
     background-color: transparent;
     font-family: var(--font-sans);
