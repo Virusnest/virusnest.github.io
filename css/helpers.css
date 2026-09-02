@@ -88,6 +88,11 @@
     margin: 5rem;
 }
 
+.mx-0 {
+    margin-left: 0;
+    margin-left: 0;
+}
+
 .mx-1 {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -164,6 +169,10 @@
     padding: 5rem;
 }
 
+.px-0 {
+    padding-left: 0;
+    padding-left: 0;
+}
 .px-1 {
     padding-left: 1rem;
     padding-right: 1rem;
