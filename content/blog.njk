@@ -3,9 +3,10 @@ layout: layouts/base.njk
 ---
     {% for post in collections.post | reverse %}
       <li>
-        <a href="{{ post.url }}" class="link">{{ post.data.title | default("Untitled Post") }}</a> —
-        <time datetime="{{ post.date }}"></time>
-      </li>
+        <a href="{{ post.url }}" class="">{{ post.data.title | default("Untitled Post") }}</a> —
+        <time datetime="{{ post.date }}">
+        {{ post.date.toDateString() }} <span class="moon-glyph" aria-hidden="true">{{ post.date | moonPhase }}</span>
+        </time>
     {% else %}
       <li>No posts found.</li>
     {% endfor %}

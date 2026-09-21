@@ -1,23 +1,23 @@
 :root {
     /* Existing Text & Backgrounds */
-    --color-text-1: #f2edd8;
-    --color-text-2: #f2edd8;
-    --color-text-3: #f2edd8;
-    --color-text-4: #f2edd8;
+    --color-text-1: #c9c19f;
+    --color-text-2: #c99a6b;
+    --color-text-3: #c9c19f;
+    --color-text-4: #c9c19f;
 
-    --color-bg-1: #070908;
+    --color-bg-1: #0f130e;
     --color-bg-2: #070908;
-    --color-bg-3: #0f1412;
+    --color-bg-3: #161018;
     --color-bg-4: #070908;
 
     /* Accent Suite */
-    --color-accent: #6366f1;
+    --color-accent: #c99a6b;
     --color-accent-hover: #4f46e5;
     --color-accent-text: #ffffff;
 
     /* Borders */
-    --color-border-subtle: #cdc4ba80;
-    --color-border-bold: #cdc4ba;
+    --color-border-subtle: #c9c19f80;
+    --color-border-bold: #c9c19f;
 
     /* System States */
     --color-danger: #ef4444;

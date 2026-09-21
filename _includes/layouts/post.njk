@@ -3,7 +3,9 @@ layout: layouts/base.njk
 ---
 <article class="">
   <h1>{{ title }}</h1>
-  <p><time>{{ date }}</time></p>
+  <p><time datetime="{{ date }}">
+      <span class="moon-glyph" aria-hidden="true">{{ date | moonPhase }}</span> {{ date.toDateString() }}
+  </time></p>
   <div class="post-body border-l px-1 mx-0">
       {{ content | safe }}
   </div>

@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/colorschemes/darkgreen.css"/>
+  <link rel="stylesheet" href="/css/helpers.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"/>
+
   <title>{{ title }}</title>
 </head>
 <body >
   {% include "header.html" %}
   <main class="">
       <div class="inline align-top">
-      {% include "sidebar.html" %}
       </div>
       <div class="inline frame ">
       {{ content | safe }}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/colorschemes/darkgreen.css"/>
+        <link rel="stylesheet" href="css/helpers.css"/>
+    </head>
+    <body>
+        {% include "header.html" %}
+
+        <main class="top p-5 py-1">
+            <h1 class="t-center"><span class="spinner">🟕</span> MY WEBSITE <span class="spinner">🟕</span></h1>
+
+            <!-- Centering container wrapper -->
+            <div class="flex j-center">
+                <!-- Grid container -->
+                <div id="body" class="row col-12 g-0">
+                    <div id="articles" class="col-span-3  frame flex">
+                        <p class="vert border-l align-top t-right flip m-0">
+                            Articles
+                        </p>
+                        <div class="mx-1 border-t border-b py-1">
+                            <ul class="frame inline clean">
+                                {% for post in collections.post | reverse %}
+                                <li>
+                                    <a href="{{ post.url }}" class="">{{ post.data.title }}</a>
+                                    -
+                                    <time datetime="{{ post.date }}">
+                                        {{ post.date.toDateString() }} <span class="moon-glyph" aria-hidden="true">{{ post.date | moonPhase }}</span>
+                                    </time>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <a href="/blog/" class="inline"
+                                >View all posts &rarr;</a
+                            >
+                        </div>
+                    </div>
+
+                    <div id="about" class="col-span-6 frame flex">
+                        <p class="vert border-l align-top t-right flip m-0">
+                            About
+                        </p>
+                        <div class="mx-1 border-t border-b">
+                        {% renderFile "content/about.md" %}
+                        </div>
+                    </div>
+
+                    <div id="webrings" class="col-span-3 frame flex">
+                        <p class="vert border-l align-top t-right flip m-0">
+                            Buttons
+                        </p>
+                        <div class="mx-1 border-t border-b py-1">
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+                            <div class="i88x31">
+                                <img src="assets/colo8831.png" class="i88x31">
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        {% include "footer.html" %}
+        <div class="bg-overlay">
+            <img src="/assets/forgetmenot.png" />
+        </div>
+    </body>
+</html>

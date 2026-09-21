@@ -1,15 +1,21 @@
-@import url("colorschemes/darkgreen.css");
-@import url("helpers.css");
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amarna:ital,wght@0,600;1,600&family=Fresca&family=Galdeano&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Sono:wght,MONO@500..800,1&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 :root {
-    --font-title: "Fraunces", serif;
-    --font-sans: "Space Grotesk", sans-serif;
-    --font-mono: "Space Mono", serif;
+    --font-title: "ValveOccult", serif;
+    --font-sans: "Amarna", sans-serif;
+    --font-mono: "Sono", serif;
+}
+
+@font-face {
+    font-family: ValveOccult;
+    font-weight: bold;
+    src: url("/assets/ValveOccult-SemiBold.woff2") format("woff2");
 }
 
 body {
     background-color: var(--color-bg-1);
     color: var(--color-text-1);
+    line-height: 1.52;
+    text-rendering: optimizeLegibility;
     font-family: var(--font-sans);
     font-style: normal;
 }
@@ -32,11 +38,125 @@ body {
 .border-b {
     border-bottom: 1px solid var(--color-border-subtle);
 }
-
-code {
-    font-family: var(--font-mono);
+pre {
+    border-left: 1px solid var(--color-border-subtle);
+    border-radius: 2px;
+    padding: 0.3em;
+    margin-left: 1em;
+    position: relative;
 }
 
+table,
+th,
+td {
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 2px;
+    border-collapse: collapse;
+    padding: 0.3em;
+}
+th,
+td {
+    border-bottom: transparent;
+    border-right: transparent;
+}
+pre::after {
+    content: "</>";
+    position: absolute;
+    top: 0;
+    right: 100.4%;
+    margin-left: 6px;
+    color: var(--color-border-bold);
+    writing-mode: vertical-rl;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+table {
+    margin-left: 1em;
+    position: relative;
+}
+table::after {
+    content: "TABLES";
+    position: absolute;
+    top: 0;
+    right: 100.9%;
+    margin-left: 6px;
+
+    color: var(--color-border-bold);
+    writing-mode: vertical-rl;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+:not(pre) > code {
+    font-family: var(--font-mono);
+    color: var(--color-text-2);
+    padding: 0 0.15em;
+}
+:not(pre) > code::before {
+    content: "⟨";
+    color: var(--color-text-2);
+    opacity: 0.5;
+
+    margin-right: 0.1em;
+}
+:not(pre) > code::after {
+    content: "⟩";
+    color: var(--color-text-2);
+    opacity: 0.5;
+    margin-left: 0.1em;
+}
+code {
+    font-family: var(--font-mono);
+    color: var(--color-text-2);
+    border-radius: 2px 6px 2px 6px;
+}
+
+a {
+    color: var(--color-accent);
+
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-accent);
+    padding-bottom: 1px;
+    transition:
+        border-bottom-style 0.2s ease,
+        border-bottom-color 0.2s ease;
+}
+a:hover {
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-accent);
+}
+
+.divider {
+    color: var(--color-border-bold);
+    border-top: 1px solid var(--color-border-bold);
+    border-bottom: transparent;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    position: relative;
+}
+.divider::before {
+    content: "✦";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* The first two values (-50%) center it mathematically.
+       The extra pixel values (+Xpx, +Ypx) let you nudge it to the exact optical center */
+    transform: translate(-50%, -50%) translate(0px, 0.5px);
+
+    font-size: 20px;
+    line-height: 1;
+    background-color: var(--color-background);
+    padding: 0 0.2em;
+}
 .f-spaced {
     letter-spacing: 0.14em;
 }
@@ -53,7 +173,6 @@ code {
     mix-blend-mode: screen;
     display: block; /* 2. Eliminates bottom baseline spacing */
     overflow: hidden; /* 3. Keeps overlay strictly inside bounds */
-    color: red;
     mask: initial;
     pointer-events: none;
     line-height: 0;
@@ -92,13 +211,31 @@ body {
     margin: 0;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+header,
 footer {
-    position: absolute;
-    bottom: 0;
+    flex-shrink: 0;
+}
+
+footer {
     text-align: center;
     width: 100%;
-    height: 60px;
-    /* Fixed height required */
+    /* no more position/height hacks needed */
 }
 
 body::before {
@@ -108,9 +245,16 @@ body::before {
     opacity: 0.05;
     content: "";
     z-index: 9999;
-    inset: 0;
+    inset: 0;    display: inline-block;
     pointer-events: none;
     position: fixed;
+}
+
+.moon-glyph {
+    text-shadow: none;
+    margin-right: 0.3em;
+    opacity: 0.8;
+    font-color: var(--color-accent);
 }
 
 h1,
@@ -120,6 +264,9 @@ h4,
 h5,
 h6 {
     font-family: var(--font-title);
+    text-shadow:
+        0 3px 0 rgba(112, 34, 34, 0.8),
+        0 0 12px rgba(201, 163, 92, 0.15);
 }
 
 .title-font {
@@ -152,6 +299,43 @@ h6 {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.i88x31 {
+    position: relative;
+    line-height: 0;
+    display: inline-block;
+}
+
+/* 1. Grayscale only the image */
+.i88x31 img {
+    filter: hue-rotate(90) grayscale(1) contrast(1.3);
+    transition: filter 0.3s ease-in-out;
+    display: block; /* Removes baseline inline spacing */
+}
+
+/* 2. Green tint overlay */
+.i88x31::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: var(--color-text-1);
+    mix-blend-mode: color; /* Recolors the grayscale image beneath */
+    opacity: 0.85;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* 3. Reveal full color on hover */
+.i88x31:hover img {
+    filter: grayscale(0);
+}
+
+.i88x31:hover::after {
+    opacity: 0;
+}
 .defult-hover:hover,
 .btn:hover {
     border-color: var(--color-border-bold);
@@ -165,6 +349,11 @@ h6 {
 
 .link:hover {
     text-decoration: none;
+}
+
+li::marker {
+    content: "✦ ";
+    font-size: 1.2em;
 }
 
 .link::after {
@@ -182,4 +371,14 @@ h6 {
 
 .link:hover::after {
     transform: scaleX(1);
+}
+
+a.link {
+    border-bottom: none;
+    transition:
+        border-bottom-style 0.2s ease,
+        border-bottom-color 0.2s ease;
+}
+.link {
+    border-bottom-style: none;
 }

@@ -334,9 +334,27 @@
 
 ul.clean,
 ol.clean {
-    list-style: none;
+    list-style: none !important;
     padding: 0;
     margin: 0;
+}
+
+ul.clean li::marker {
+    content: "" !important;
+    opacity: 0;
+}
+
+.spinner {
+    display: inline-block;
+    text-shadow: none;
+    transform-origin: 50% 50%;
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Clean Button - Removes default borders, background, padding, and outline */
