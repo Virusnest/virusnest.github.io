@@ -1,16 +1,17 @@
 ---
 layout: layouts/base.njk
 ---
-<h1>Spell Circle SVG genertor</h1>
-<div>
 
+<h1>Spell Circle SVG genertor</h1>
+<div class="flex">
+    <div class="flex">
+        <ul id="list"></ul>
+    </div>
+    <div id="canvas" class="flex"></div>
 </div>
 <div>
-    <ul>
-        <li>
-            TREE
-        </li>
-        <div id="svg-output"></div>
-    </ul>
+    <button>Add New</button>
+    <button>Remove</button>
 </div>
+
 <script src="/js/spells.js"></script>
