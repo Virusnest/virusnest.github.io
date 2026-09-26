@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-300 -300 600 600" width="100%" height="100%" fill="#000000">
+
+  <defs>
+    <!-- Reusable Sigils / Occult Runes using currentColor for theme adaptability -->
+    <g id="sigil-1">
+      <path d="M0,-20 L0,20 M-12,-8 L12,-8 M-8,8 L8,8" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.8"/>
+      <circle cx="0" cy="0" r="3" fill="currentColor" opacity="0.6"/>
+      <circle cx="0" cy="-20" r="2.5" fill="none" stroke="currentColor" stroke-width="1" opacity="0.8"/>
+      <circle cx="0" cy="20" r="2.5" fill="none" stroke="currentColor" stroke-width="1" opacity="0.8"/>
+    </g>
+
+    <g id="sigil-2">
+      <path d="M-12,-12 L12,12 M-12,12 L12,-12 M0,-16 L0,16" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.8"/>
+      <polygon points="0,-10 6,5 -6,5" fill="none" stroke="currentColor" stroke-width="1" opacity="0.8"/>
+    </g>
+  </defs>
+
+  <style>
+    /* Default theme color if none is specified via CSS */
+    :root {
+      --magic-primary: #c5a880;
+      background-color: black;
+      --magic-secondary: #7fb5c5;
+    }
+
+    /* Target these classes or CSS variables to recolor */
+    .primary-stroke { stroke: var(--magic-primary); }
+    .secondary-stroke { stroke: var(--magic-secondary); }
+
+    /* Gentle, slow CSS rotations */
+    .spin-cw {
+      transform-origin: 0px 0px;
+      animation: spin 90s linear infinite;
+    }
+    .spin-ccw {
+      transform-origin: 0px 0px;
+      animation: spin-rev 75s linear infinite;
+    }
+    .spin-slow-cw {
+      transform-origin: 0px 0px;
+      animation: spin 120s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes spin-rev {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+
+  <!-- Solid Black Background Layer -->
+  <rect x="-300" y="-300" width="600" height="600" fill="#000000" />
+
+  <!-- Outer Ambient Layer -->
+  <g class="spin-ccw primary-stroke" opacity="0.3">
+    <circle cx="0" cy="0" r="230" fill="none" stroke-width="0.75" stroke-dasharray="3,9"/>
+    <circle cx="0" cy="0" r="220" fill="none" stroke-width="1"/>
+    <path d="M0,-220 L0,-213 M0,213 L0,220 M-220,0 L-213,0 M213,0 L220,0" stroke-width="1.5"/>
+  </g>
+
+  <!-- Outer Ring Layer -->
+  <g class="spin-cw primary-stroke" opacity="0.6">
+    <circle cx="0" cy="0" r="200" fill="none" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="192" fill="none" stroke-width="0.75" stroke-dasharray="2,6"/>
+    <circle cx="0" cy="0" r="184" fill="none" stroke-width="1"/>
+
+    <!-- Glyphs / Sigils -->
+    <g transform="rotate(0)"><use href="#sigil-1" x="0" y="-192"/></g>
+    <g transform="rotate(45)"><use href="#sigil-2" x="0" y="-192"/></g>
+    <g transform="rotate(90)"><use href="#sigil-1" x="0" y="-192"/></g>
+    <g transform="rotate(135)"><use href="#sigil-2" x="0" y="-192"/></g>
+    <g transform="rotate(180)"><use href="#sigil-1" x="0" y="-192"/></g>
+    <g transform="rotate(225)"><use href="#sigil-2" x="0" y="-192"/></g>
+    <g transform="rotate(270)"><use href="#sigil-1" x="0" y="-192"/></g>
+    <g transform="rotate(315)"><use href="#sigil-2" x="0" y="-192"/></g>
+  </g>
+
+  <!-- Mid-Outer Geometric Layer -->
+  <g class="spin-ccw" opacity="0.5">
+    <circle cx="0" cy="0" r="160" fill="none" class="secondary-stroke" stroke-width="1" stroke-dasharray="8,4,2,4"/>
+    <polygon points="0,-150 129.9,75 -129.9,75" fill="none" class="primary-stroke" stroke-width="1"/>
+    <polygon points="0,150 129.9,-75 -129.9,-75" fill="none" class="primary-stroke" stroke-width="1"/>
+  </g>
+
+  <!-- Mid Layer -->
+  <g class="spin-cw" opacity="0.55">
+    <circle cx="0" cy="0" r="125" fill="none" class="primary-stroke" stroke-width="1.25"/>
+    <circle cx="0" cy="0" r="110" fill="none" class="primary-stroke" stroke-width="0.75" stroke-dasharray="6,4"/>
+    <rect x="-77.7" y="-77.7" width="155.4" height="155.4" fill="none" class="secondary-stroke" stroke-width="1" transform="rotate(45)"/>
+    <rect x="-77.7" y="-77.7" width="155.4" height="155.4" fill="none" class="primary-stroke" stroke-width="1"/>
+  </g>
+
+  <!-- Inner Core Layer -->
+  <g class="spin-ccw" opacity="0.65">
+    <polygon points="0,-80 76.08,55.27 -64.72,-21.04 64.72,-21.04 -76.08,55.27"
+             fill="none" class="primary-stroke" stroke-width="1.25" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="80" fill="none" class="primary-stroke" stroke-width="0.75"/>
+    <circle cx="0" cy="0" r="50" fill="none" class="secondary-stroke" stroke-width="1" stroke-dasharray="4,4"/>
+    <circle cx="0" cy="0" r="35" fill="none" class="primary-stroke" stroke-width="1"/>
+  </g>
+
+  <!-- Absolute Center Details -->
+  <g class="spin-slow-cw primary-stroke" opacity="0.5">
+    <path d="M-15,0 L15,0 M0,-15 L0,15" stroke-width="1"/>
+    <circle cx="0" cy="0" r="4" fill="none" stroke-width="1"/>
+  </g>
+</svg>

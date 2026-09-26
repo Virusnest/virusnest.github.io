@@ -179,12 +179,25 @@ a:hover {
     top: 0;
     left: 0;
 }
+
+/* Example: Turning it into a mystical neon purple and cyan theme */
+
+.tint::after {
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--color-bg-3);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    content: "";
+}
 .bg-overlay::after {
     position: absolute;
     inset: 0;
 
-    background-color: var(--color-bg-3); /* Your tint color (e.g., hot pink) */
-    mix-blend-mode: multiply; /* Multiplies color into the white areas */
+    background-color: var(--color-bg-3);
+
+    mix-blend-mode: multiply;
     pointer-events: none;
     content: "";
 }
@@ -245,7 +258,8 @@ body::before {
     opacity: 0.05;
     content: "";
     z-index: 9999;
-    inset: 0;    display: inline-block;
+    inset: 0;
+    display: inline-block;
     pointer-events: none;
     position: fixed;
 }
@@ -381,4 +395,7 @@ a.link {
 }
 .link {
     border-bottom-style: none;
+}
+img {
+    background: transparent;
 }
